@@ -11,7 +11,7 @@ public class TaxiService {
 	@Autowired
 	private TaxiDAO taxi;
 
-	public TaxiDAO getTaxi() {	return taxi; }	public void setTaxi(TaxiDAO taxi) {	this.taxi = taxi;	}
+	public TaxiDAO getTaxi(){	return taxi; }	public void setTaxi(TaxiDAO taxi) {	this.taxi = taxi;	}
 	
 	public void updateflag(String tname,int a,int b,String sta) {
 		
