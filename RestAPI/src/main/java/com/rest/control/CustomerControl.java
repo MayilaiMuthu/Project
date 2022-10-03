@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rest.dto.OrderRequest;
+import com.rest.dto.OrderResponse;
 import com.rest.entity.CustomerABC;
 import com.rest.service.CustomerService;
 
@@ -25,9 +26,14 @@ public class CustomerControl {
 		return customerService.setOrder(orderRequest);
 	}
 	
-	@GetMapping(value = "view")
+	@GetMapping(value = "views")
 	public List<CustomerABC> viewOrder() {
 		return customerService.viewOrder();
+	}
+	
+	@GetMapping(value = "view")
+	public List<OrderResponse> getInfoOrderResponses() {
+		return customerService.getInfoOrderResponses();
 	}
 
 }

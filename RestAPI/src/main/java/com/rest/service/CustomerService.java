@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rest.dto.OrderRequest;
+import com.rest.dto.OrderResponse;
 import com.rest.entity.CustomerABC;
 import com.rest.repo.CustomerRepo;
 @Service
@@ -24,6 +25,10 @@ public class CustomerService {
 	
 	public List<CustomerABC> viewOrder() {
 		return customerRepo.findAll();
+	}
+	
+	public List<OrderResponse> getInfoOrderResponses() {
+		return customerRepo.getInfoOrderResponses();
 	}
 
 }
