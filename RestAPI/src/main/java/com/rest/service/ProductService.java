@@ -2,9 +2,6 @@ package com.rest.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +9,6 @@ import com.rest.entity.Product;
 import com.rest.repo.ProductRepo;
 
 @Service
-@Transactional
 public class ProductService {
 	
 	@Autowired
@@ -31,8 +27,8 @@ public class ProductService {
 	public String put(int uid,Product product) {
 		Product pro=productRepo.findById(uid).orElse(null);
 		if(pro!=null) {
-			pro.setClassNo(product.getClassNo());
-			pro.setsName(product.getsName());
+			pro.setPAmt(product.getPAmt());
+			pro.setPName(product.getPName());
 			productRepo.save(pro);  return "success";
 		} else { return "fail"; }
 	}
